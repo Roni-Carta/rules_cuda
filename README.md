@@ -1,4 +1,3 @@
-HELLO
 # CUDA rules for [Bazel](https://bazel.build)
 
 This repository contains [Starlark](https://github.com/bazelbuild/starlark) implementation of CUDA rules in Bazel.
