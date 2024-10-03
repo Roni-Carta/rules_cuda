@@ -5,18 +5,12 @@ filegroup(
     ],
 )
 
-filegroup(
+genrule(
     name = "perf_binaries",
+    outs = ["hello.txt"],
     srcs = [
-        "@nccl-tests//:all_gather_perf",
-        "@nccl-tests//:all_reduce_perf",
-        "@nccl-tests//:alltoall_perf",
-        "@nccl-tests//:broadcast_perf",
-        "@nccl-tests//:gather_perf",
-        "@nccl-tests//:hypercube_perf",
-        "@nccl-tests//:reduce_perf",
-        "@nccl-tests//:reduce_scatter_perf",
-        "@nccl-tests//:scatter_perf",
-        "@nccl-tests//:sendrecv_perf",
+        "test.sh"
     ],
+    cmd = "$(location test.sh) > $(OUTS)",
 )
+
